@@ -1,0 +1,25 @@
+{
+  "name": "visual-cdecl",
+  "version": "1.0.0",
+  "description": "A visual cdecl: edit a C declaration as English, C code, or an interactive diagram of boxes and arrows, all synced in real time.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "avestura",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avestura/visual-cdecl.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.4"
+  }
+}
