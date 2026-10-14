@@ -1,6 +1,6 @@
 # Visual cdecl
 
-A [cdecl](https://cdecl.org)-style translator for C declarations with a third view: an interactive diagram of boxes and arrows. Edit any of the three and the other two update as you type.
+Based on the concept of [cdecl](https://cdecl.org) and its source repo, [ridiculousfish/cdecl-blocks](https://github.com/ridiculousfish/cdecl-blocks): a translator for C declarations with a third view: an interactive diagram of boxes and arrows. Edit any of the three and the other two update as you type.
 
 **Live demo:** http://github.avestura.dev/visual-cdecl/
 
@@ -56,4 +56,4 @@ src/visual/           box/arrow layout and SVG rendering
 
 ## License
 
-MIT. Inspired by cdecl and [cdecl-blocks](https://github.com/ridiculousfish/cdecl-blocks); this is an independent implementation.
+MIT. Based on the concept of [cdecl](https://cdecl.org) and [ridiculousfish/cdecl-blocks](https://github.com/ridiculousfish/cdecl-blocks); this is an independent implementation and does not reuse their code.
