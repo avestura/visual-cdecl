@@ -2,7 +2,7 @@
 
 A [cdecl](https://cdecl.org)-style translator for C declarations with a third view: an interactive diagram of boxes and arrows. Edit any of the three and the other two update as you type.
 
-**Live demo:** https://avestura.github.io/visual-cdecl/
+**Live demo:** http://github.avestura.dev/visual-cdecl/
 
 | View | Example |
 | --- | --- |
