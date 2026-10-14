@@ -68,6 +68,7 @@ function markInvalid(el: HTMLTextAreaElement, msg: HTMLElement, e: unknown): voi
 englishEl.addEventListener('input', () => {
   try {
     setDecl(parseEnglish(englishEl.value), 'english');
+    markValid(englishEl, englishMsg);
   } catch (e) {
     markInvalid(englishEl, englishMsg, e);
   }
@@ -75,6 +76,7 @@ englishEl.addEventListener('input', () => {
 cEl.addEventListener('input', () => {
   try {
     setDecl(parseC(cEl.value), 'c');
+    markValid(cEl, cMsg);
   } catch (e) {
     markInvalid(cEl, cMsg, e);
   }
