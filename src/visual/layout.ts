@@ -109,7 +109,9 @@ function buildBox(type: Type, path: string[]): Box {
       const n = type.size !== null && /^\d+$/.test(type.size) ? parseInt(type.size, 10) : null;
       // Which slots to draw: indexes, or -1 for an ellipsis row.
       let slots: number[];
-      if (n === null) slots = [0, 1, 2, -1];
+      // Nested arrays multiply in size, so show only the first sub-array and an ellipsis.
+      if (type.of.kind === 'array') slots = n === 1 || n === 0 ? [0] : [0, -1];
+      else if (n === null) slots = [0, 1, 2, -1];
       else if (n <= 4) slots = Array.from({ length: Math.max(n, 1) }, (_, i) => i);
       else slots = [0, 1, -1, n - 1];
       const pad = 8;
