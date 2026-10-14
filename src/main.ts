@@ -123,7 +123,8 @@ function apply(fn: () => Decl, nextSel?: Path, source: Source = 'visual'): void 
 function button(text: string, onClick: () => void, opts: { on?: boolean; danger?: boolean; title?: string } = {}) {
   const b = document.createElement('button');
   b.type = 'button';
-  b.className = 'btn small' + (opts.on ? ' on' : '') + (opts.danger ? ' danger' : '');
+  b.className = 'bx-btn bx-btn--sm' + (opts.danger ? ' danger' : '');
+  if (opts.on !== undefined) b.setAttribute('aria-pressed', String(opts.on));
   b.textContent = text;
   if (opts.title) b.title = opts.title;
   b.addEventListener('click', onClick);

@@ -10,6 +10,8 @@ A [cdecl](https://cdecl.org)-style translator for C declarations with a third vi
 | C | `int (*(*foo)(const void *))[3]` |
 | Visual | boxes for values, dots and arrows for pointers, stacked cells for arrays, a row-per-parameter box for functions |
 
+The interface follows the [Boxy](https://github.com/avestura/boxy-design-skill) design system in its `blueprint` mode: zero radius, 1px hairlines, hard-offset shadows only, a mono-label type system and a rationed accent. The vendored Boxy CSS lives in `src/boxy/`, and `node scripts/boxy-check.mjs index.html src/style.css src/main.ts src/visual` validates the app against it.
+
 ## Features
 
 - **Three synced views.** Type English, type C, or edit the diagram.

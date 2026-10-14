@@ -12,9 +12,9 @@ function boxBody(b: Box, sel: string): string {
   const title = `<title>${esc(typeToEnglish(b.type))}</title>`;
   switch (b.kind) {
     case 'base':
-      return `${title}<rect class="shape" width="${b.w}" height="${b.h}" rx="8"/>${quals(b)}<text class="label" x="${b.w / 2}" y="${b.top + 24}" text-anchor="middle">${esc(b.label)}</text>`;
+      return `${title}<rect class="shape" width="${b.w}" height="${b.h}"/>${quals(b)}<text class="label" x="${b.w / 2}" y="${b.top + 24}" text-anchor="middle">${esc(b.label)}</text>`;
     case 'ptr':
-      return `${title}<rect class="shape" width="${b.w}" height="${b.h}" rx="8"/>${quals(b)}<circle class="ptr-dot" cx="${b.w / 2}" cy="${b.top + 19}" r="5"/>`;
+      return `${title}<rect class="shape" width="${b.w}" height="${b.h}"/>${quals(b)}<circle class="ptr-dot" cx="${b.w / 2}" cy="${b.top + 19}" r="5"/>`;
     case 'array': {
       const cells = b.cells
         .map((c) => {
@@ -23,7 +23,7 @@ function boxBody(b: Box, sel: string): string {
           return ghost(b, c.rx, c.ry, c.w, c.h);
         })
         .join('');
-      return `${title}<rect class="shape" width="${b.w}" height="${b.h}" rx="8"/><text class="head" x="${b.w / 2}" y="16" text-anchor="middle">${esc(b.label)}</text>${cells}`;
+      return `${title}<rect class="shape" width="${b.w}" height="${b.h}"/><text class="head" x="${b.w / 2}" y="16" text-anchor="middle">${esc(b.label)}</text>${cells}`;
     }
     case 'func': {
       const rows = b.rows
@@ -35,7 +35,7 @@ function boxBody(b: Box, sel: string): string {
           return `${sep}<text class="${cls}" x="${x}" y="${r.ry + r.h / 2 + 5}" text-anchor="${anchor}">${esc(r.text)}</text>`;
         })
         .join('');
-      return `${title}<rect class="shape" width="${b.w}" height="${b.h}" rx="8"/>${rows}`;
+      return `${title}<rect class="shape" width="${b.w}" height="${b.h}"/>${rows}`;
     }
   }
 }
@@ -46,7 +46,7 @@ function ghost(parent: Box, rx: number, ry: number, w: number, h: number): strin
   let inner = '';
   if (el?.kind === 'base') inner = `<text class="label dim" x="${w / 2}" y="${h / 2 + 5}" text-anchor="middle">${esc(el.name)}</text>`;
   else if (el?.kind === 'ptr') inner = `<circle class="ptr-dot dim" cx="${w / 2}" cy="${h / 2}" r="5"/>`;
-  return `<g class="ghost" data-path="${esc(path)}" transform="translate(${rx},${ry})"><rect class="shape" width="${w}" height="${h}" rx="8"/>${inner}</g>`;
+  return `<g class="ghost" data-path="${esc(path)}" transform="translate(${rx},${ry})"><rect class="shape" width="${w}" height="${h}"/>${inner}</g>`;
 }
 
 function boxGroup(b: Box, sel: string, x: number, y: number): string {
